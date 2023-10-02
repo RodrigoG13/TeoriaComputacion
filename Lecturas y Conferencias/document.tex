@@ -1,0 +1,181 @@
+% !TeX spellcheck = es_MX-SpanishMexico
+%----------------------------------------------------------------------------------------------------
+%                           		  ENTRE LÍNEAS DE TIERRA
+
+% Curso: Historia de la Biblia I - Antiguo Testamento
+% Módulo 1: La Torá / El Pentateuco
+% Elabora: Rodrigo Gerardo Trejo Arriaga
+
+%----------------------------------------------------------------------------------------------------
+
+% FORMATO DEL DOCUMENTO
+
+
+\documentclass[12pt]{article} % Letra estandar
+
+\usepackage[utf8]{inputenc}
+
+%\usepackage{tgadventor}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[light,math]{iwona}
+
+\usepackage[T1]{fontenc}
+
+
+\usepackage[spanish]{babel}
+\addto\captionsspanish{\renewcommand{\abstractname}{\large{Introducción}}}
+
+\usepackage[margin=1in,letterpaper]{geometry}
+
+\usepackage{fancyhdr} % Paquete para personalizar encabezado y pie de página
+\pagestyle{fancy} % Establece que personalizaremos el pie de pagina y el encabezado
+\setlength{\headheight}{13.59999pt} % Establece la altura del encabezado
+\fancyhead[R]{\textcolor{darkBlue}{Escuela Superior de Cómputo}} % Encabezado derecho
+\fancyhead[L]{\textit{\textcolor{darkBlue}{Introducción}}} % Encabezado izquierdo
+\fancyfoot[L]{\textit{\textcolor{darkBlue}{Teoría de la Computación }}} % Pie de página izquierdo 
+\fancyfoot[R]{\textcolor{darkBlue}{\thepage}} % Pie de página  derecho
+\fancyfoot[C]{} % Elimina la nueración central de páginas en el pie de página
+\renewcommand{\headrulewidth}{0.5pt} % Grosor de la linea de encabezado
+\renewcommand{\footrulewidth}{0.5pt} % Grosor de la linea de pie de página
+
+\usepackage{enumitem}
+
+\usepackage{changepage}
+
+\usepackage{graphicx}
+
+\usepackage{tabularx}
+
+\setlength{\parskip}{8pt}
+
+\usepackage{xcolor}
+\definecolor{darkBlue}{rgb}{0,0,0.31}
+%\definecolor{darkBlue}{rgb}{0,0,0.5}
+\definecolor{munsell}{rgb}{0.0, 0.5, 0.69}
+\definecolor{indigo}{rgb}{0.0, 0.25, 0.42}
+\renewcommand{\footrulewidth}{2pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{darkBlue}\leaders\hrule height \footrulewidth\hfill}}
+
+\usepackage{colortbl}
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{darkBlue}}{\thesection.}{1em}{}
+
+\usepackage{tabularx}
+
+\usepackage{textcomp}
+
+\usepackage{titling}
+
+\usepackage{apacite}
+\bibliographystyle{apacite}
+
+%\usepackage{natbib}
+%\setlength{\bibsep}{6pt}
+
+\usepackage{setspace}
+
+\renewcommand{\thesection}{\Roman{section}}
+
+%----------------------------------------------------------------------------------------------------
+% CUERPO DEL DOCUMENTO
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		{\includegraphics[width=0.2\textwidth]{escom}\par}
+		\vspace{0.5cm}
+		{\bfseries\huge Instituto Politécnico Nacional \par}
+		\vspace{0.2cm}
+		{\scshape\LARGE Escuela Superior de Cómputo \par}
+		\vspace{0.7cm}
+		{\LARGE Teoría de la Computación \par}
+		\vspace{3cm}
+		{\scshape \Huge \textbf{Introducción}  \par}
+		%\vfill
+		\vspace{2.5cm}
+		{\Large Autor: \par}
+		{\Large Rodrigo Gerardo Trejo Arriaga \par}
+		
+		\vspace{0.5cm}
+		{\Large Grupo: \par}
+		{\Large 5BM1 \par}
+		%\vfill
+		\vspace{2.5cm}
+		{\Large Septiembre 2023 \par}
+	\end{titlepage}
+	
+	
+	\section{Conferencia. Las matemáticas y los problemas computables}
+	
+	La importancia de las matemáticas en la ciencia y la tecnología es innegable, ya que permiten representar visualmente y resolver una amplia gama de problemas mediante medios computacionales. Este vínculo entre las matemáticas y la computación se ha forjado a lo largo de la historia y ha dado lugar a avances fundamentales en la teoría y la práctica de la informática.
+	
+	Un hito crucial en la intersección de las matemáticas y la computación se produjo en el Primer Congreso Internacional de Matemáticas, celebrado en París en 1900. En ese evento, David Hilbert planteó 23 problemas que desafiaron a los matemáticos de la época. Uno de estos problemas, conocido como el décimo problema de Hilbert o el "problema de la decisión", consistía en encontrar un método para resolver ecuaciones diofánticas, un tipo particular de ecuación con coeficientes enteros.
+	
+	Antes de este planteamiento, los matemáticos abordaban estos problemas de manera gradual, buscando soluciones de manera incremental. Sin embargo, bajo la influencia de obras como "Principia Mathematica", se desarrolló una teoría que promovía un enfoque sistemático y general para abordar estos desafíos matemáticos.
+	
+	Fue Alan Turing quien revolucionó esta perspectiva al desarrollar lo que llamó "el procedimiento efectivo", una metodología que sentaría las bases para lo que hoy conocemos como algoritmo. Utilizando este enfoque, Turing no solo demostró que el décimo problema de Hilbert no tenía solución, sino que también creó una teoría de sistemas universales. Esta teoría afirmaba que cualquier elemento compuesto podía construirse a partir de elementos primitivos, lo que llevó a la concepción de una "máquina universal".
+	
+	La máquina de Turing universal propuesta por Turing era un dispositivo teórico que podía tomar como entrada otra máquina de Turing y, a partir de ella, resolver problemas más complejos. Esta idea sentó las bases para comprender la computabilidad y la complejidad de los problemas computacionales. En esencia, todo problema computable tiene una máquina de Turing asociada, y si un problema no es computable, no se puede describir mediante una máquina de Turing.
+	
+	El concepto de computabilidad y decidibilidad es un tema central en la teoría de la computación, y expertos como John Hopcroft han explorado cómo determinar si un problema es computable o decidible. Además, se han planteado cuestiones intrigantes, como la posibilidad de convertir un programa simple, como el clásico "hola mundo", en un problema no computable al proponer una impresión infinita de dicho mensaje.
+	
+	En este contexto, la Escuela Superior de Cómputo ha logrado una contribución significativa al crear la primera máquina de Turing mexicana, que es una máquina universal. Este logro resalta la importancia continua de la teoría de la computación y la relevancia de la máquina de Turing como un concepto fundamental en la informática.
+	
+	
+	\section{Machines Computing and Learning by Genaro J Martínez}
+	
+	El concepto de cómputo realizado por máquinas y las formas en que estas máquinas pueden aprender y adaptarse ha sido una preocupación constante en el ámbito de la investigación. La posibilidad de que las máquinas sean capaces de programarse automáticamente ha sido objeto de estudio durante décadas, ya que podría tener un impacto significativo en diversas áreas que dependen del cómputo y requieren asistencia humana para cumplir sus objetivos.
+	
+	Uno de los precursores de esta idea fue John von Neumann, quien planteó la noción de que la programación automática es una prueba de la existencia de una máquina de cómputo universal. Esta idea fue un hito importante en el desarrollo de la inteligencia artificial, ya que implicaba que una máquina podría adquirir la capacidad de programarse a sí misma, lo que parecía un desafío insuperable en ese momento.
+	
+	Contribuciones posteriores que ayudaron a desarrollar esta idea provinieron de dos figuras destacadas en la informática: Alan Turing y Marvin Minsky. Turing, en su famoso artículo "Computing Machinery and Intelligence", exploró la idea de que las máquinas podrían ser capaces de aprender y exhibir inteligencia. Minsky, por su parte, se centró en los "sistemas de aprendizaje" y cómo las máquinas podrían adquirir conocimientos y habilidades a través de la experiencia.
+	
+	Un experimento ilustrativo de este concepto se realizó con un pequeño robot que tenía acceso a sensores y la capacidad de tomar decisiones limitadas. A pesar de sus limitaciones, el robot aprendió a navegar por un entorno complejo a través de la exposición continua y la acumulación de experiencias. Este proceso de aprendizaje se basó en la memoria y la adaptación, dos aspectos fundamentales para que las máquinas adquieran conocimiento y realicen tareas de manera autónoma.
+	
+	En el campo de Modular Robotics, se busca desarrollar máquinas que sean adaptables y reconfigurables, lo que permite implementar la capacidad de aprendizaje. Eric Schweikardt, por ejemplo, creó los Cubelet Robots, diseñados para conectarse fácilmente entre sí mediante magnetismo. Cada unidad es modular y puede reconocer información como la temperatura o las conexiones entre unidades.
+	
+	Otro ejemplo notable de aprendizaje en máquinas se encuentra en los vehículos autónomos, que toman decisiones basadas en sensores y experiencias previas. Los Cubelets se han utilizado para demostrar la equivalencia entre máquinas y la posibilidad de crear una máquina de Turing universal, que puede comprender acciones como el movimiento y tomar decisiones.
+	
+	El cómputo en dos dimensiones abre posibilidades aún mayores para las máquinas, ya que permite el uso de sistemas no triviales basados en reglas evolutivas. Se han realizado experimentos con enjambres de robots que compiten y se adaptan a ciclos evolutivos, lo que muestra el potencial de estos enfoques en el desarrollo de nanotecnología.
+	
+	Sin embargo, es importante considerar las limitaciones, como la presencia de componentes no confiables y la organización de señales para producir sistemas complejos. El cómputo modular se ha explorado como una alternativa al cómputo lineal, lo que podría tener efectos significativos en la eficiencia del cómputo al lograr resultados en un solo paso en lugar de varios.
+	
+	
+	\section{Form and content in computer science (1970 ACM Turing Lecture).}
+	
+	
+	El artículo de Marvin Minsky, Form and Content in Computer Science, expone el tema del análisis numérico y su relación con las ciencias computacionales en el contexto de los años setentas. En este entonces había un boom en cuanto a los avances computacionales, Minsky presenta a dicha área como "nueva y emocionante", mientras que a las matemáticas se les daba una connotación tradicional. Sin embargo, anima a los lectores a recordar la riqueza histórica que existe en los métodos numéricos, porque gracias a su avance es que fue posible el desarrollo de la computación contemporánea.
+	
+	Así mismo, propone que las ciencias computacionales auxilian a las matemáticas en la realización de cálculos largos y complejos, y que esto debería ser aprovechado al máximo cuando resolvemos problemas. Por ejemplo, Minsky resalta el progreso en la resolución del problema de eigenvalores utilizando el algoritmo QR moderno, que permite obtener sistemas precisos de valores propios para matrices densas de hasta 100 en cuestión de minutos. Además, menciona la capacidad de proporcionar límites de error rigurosos tanto para los valores propios como para los vectores propios, si es necesario. 
+	
+	Particularmente, encuentro esta perspectiva interesante y muy acertada, ya que al abordar las matemáticas desde un enfoque computacional, es posible automatizar operaciones largas y tediosas mediante unas pocas instrucciones en un lenguaje de programación. Esto permite que tanto los estudiantes como aquellos que están inmersos en este proceso se concentren en el análisis del problema, que suele ser la parte más compleja, en lugar de gastar tiempo en cálculos repetitivos, donde suelen ocurrir más errores. En mi experiencia, las materias de matemática que se me han impartido con esta visión, han sido las que más he disfrutado en mi vida (:
+	
+	Por otra parte, bajo el argumento de que un enfoque computacional de las matemáticas es necesario para dar solución a problemas complejos, Minsky enfatiza la importancia de la comunicación y difusión de algoritmos y conocimientos en el campo del análisis numérico. Esta falta de comunicación y documentación adecuada se ha traducido en una brecha entre el desarrollo de algoritmos y su disponibilidad para quienes los necesitan. Los algoritmos son esenciales para resolver problemas numéricos, y la falta de acceso a algoritmos bien probados y documentados puede obstaculizar el progreso en diversas disciplinas que dependen de ellos.
+	
+	Finalmente, Minsky destaca la falta de colaboración entre expertos de varias disciplinas (especialmente las que tienen que ver con matemática y ciencias de la computación), a pesar de las oportunidades evidentes para aplicar por ejemplo, algoritmos matriciales en estadísticas prácticas. Además, Minsky enfatiza que la computación matemática jugará un papel crucial en el futuro y que los analistas numéricos deben centrarse en problemas aplicados, reclutando talento de matemáticos aplicados y físicos matemáticos para abordar estos desafíos, lo que puede elevar la moral en el campo del análisis numérico, como se evidencia en la Unión Soviética.
+	
+	
+	\section{Brief notes and history of computing in Mexico during 50 years.}
+	
+	Este artículo se inicia destacando la destacada contribución del Prof. Harold V. McIntosh al campo de la informática en México, una contribución que abarcó casi 50 años de dedicación incansable y logros sobresalientes. Su legado es un testimonio de su pasión por la informática y su visión para promover y desarrollar esta disciplina en México y América Latina.
+	
+	La historia de McIntosh en la informática mexicana comenzó en 1964, cuando se unió al Instituto Politécnico Nacional (IPN). Fue en el IPN donde dejó una huella imborrable al fundar el primer programa de Maestría en Computación en 1965, un hito que marcó el inicio de la formación avanzada en informática en México y, de hecho, en América Latina.
+	
+	Sin embargo, la contribución de McIntosh no se limitó a la creación de programas académicos. Su compromiso con la promoción de la lógica matemática y la programación fue fundamental en la Academia de Matemáticas Aplicadas en la Escuela de Física y Matemáticas (ESFM). Su habilidad como profesor se ganó el reconocimiento y el respeto de sus estudiantes, y su legado perdura en las generaciones de profesionales que han seguido sus pasos.
+
+	
+	A pesar de los desafíos económicos que enfrentó México en la década de 1980, la investigación en ciencias de la computación continuó creciendo gracias al apoyo de las universidades y la dedicación inquebrantable de los investigadores en el campo. La falta de financiamiento sólido para la informática llevó a la formación de asociaciones científicas, como la Asociación Mexicana de Ciencia de la Computación, que promovieron la colaboración y la investigación en informática a nivel nacional e internacional.
+	
+	En las décadas de 1990 y 2000, México hizo importantes contribuciones en diversas áreas de la informática, y el trabajo de McIntosh en autómatas celulares y su enfoque en la reversibilidad en estos sistemas destacaron especialmente. Su investigación sobre autómatas celulares no solo profundizó nuestra comprensión de la computación en sistemas lineales y no lineales, sino que también condujo al desarrollo de un algoritmo innovador para calcular preimágenes en autómatas celulares unidimensionales.
+	
+	La influencia de McIntosh perdura en la actualidad, con eventos en su honor, como la "Celebración de los logros del fallecido Prof. Harold V. McIntosh" en 2017, que reunió a destacados profesores en línea, incluidos Leon Chua, Morita, Adamatzky y Wolfram. En 2018, se celebró el 60 aniversario de la informática en México, un hito que refleja el impacto duradero de su trabajo en la comunidad informática.
+	
+	Un hito más reciente y notable en la historia de la informática en México fue la construcción de la primera máquina de Turing robótica, conocida como la "Cubelet-LEGO Turing machine" (CULET) en 2018. Este logro tecnológico sin precedentes se logró en colaboración con la Unconventional Computing Lab (UCL) de UWE. La CULET, que utiliza robots Cubelets y piezas LEGO, representa un logro emblemático en la informática y la robótica en México. Puede programarse para simular diversas funciones, incluida una máquina de Turing universal que representa el autómata celular elemental universal regla 110.
+	
+	
+	
+\end{document}
