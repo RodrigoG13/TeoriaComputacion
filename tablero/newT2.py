@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     colores_ruta = ["r", "b", "b"]
 
-    n = 15
+    n = 14
 
     cadenas = ["r", "b"]
 
@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     inicio = time.time()
     generar_rutas_ficha1 = multiprocessing.Process(target=generar_rutas, args=(tablero, indices, 1, 9, 1, colores_ruta, "f1"))
-    generar_rutas_ficha16 = multiprocessing.Process(target=generar_rutas, args=(tablero, indices, 7, 3, 16, colores_ruta, "f16"))
+    generar_rutas_ficha16 = multiprocessing.Process(target=generar_rutas, args=(tablero, indices, 4, 13, 16, colores_ruta, "f16"))
 
     generar_rutas_ficha1.start()
     generar_rutas_ficha16.start()
@@ -62,11 +62,10 @@ if __name__ == "__main__":
     generar_rutas_ficha1.join()
     generar_rutas_ficha16.join()
 
-    print("Ambos procesos han terminado.")
+    print("Ambas rutas calculadas.")
 
     fin = time.time()
 
-    # Calcula el tiempo transcurrido en segundos
     tiempo_transcurrido = fin - inicio
 
     print(f"\nEl programa tardó {tiempo_transcurrido} segundos en ejecutarse.")

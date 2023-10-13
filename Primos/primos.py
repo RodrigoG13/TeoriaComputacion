@@ -27,22 +27,39 @@ import os
 import time
 import csv
 import matplotlib.pyplot as plt
+import random
 
 #  --------------------------------------------------------------------------------------------------------------------
 # CLASES
 
 
-class numPrimos:
+class ParticionNumPrimos:
+    """Clase que genera la partición del universo de números primos"""
 
-    def __init__(self, fin_rango) -> None:
+
+    def __init__(self, fin_rango: int) -> None:
+        """Constructor de la clase
+
+        Args:
+            fin_rango (int): Límite del rango de la partición
+        """
         self.fin_rango = fin_rango 
-        self.arch_binprimos =  open(f"univ_binprimos.txt", "a+", encoding="utf-8") 
-        self.arch_decprimos =  open(f"univ_decprimos.txt", "a+", encoding="utf-8")  
-        self.arch_tablasUnos = open(f"tabla.csv", "a+")
+        self.arch_binprimos =  open(f"univ_binprimos.txt", "w+", encoding="utf-8") 
+        self.arch_decprimos =  open(f"univ_decprimos.txt", "w+", encoding="utf-8")  
+        self.arch_tablasUnos = open(f"tabla.csv", "w+")
         self.arch_tablasUnos.write("Numero, Cantidad de Unos\n" )  
 
 
-    def es_primo(self, num_test):
+    def es_primo(self, num_test: int) -> bool:
+        """Método que indica si un número es primo
+
+        Args:
+            num_test (int): Número que se verifica si es primo
+
+        Returns:
+            bool: Bandera que dice si el número es primo o no
+        """
+
         # Comprobamos si n es igual a 2 (único primo par)
         if num_test == 2:
             return True
@@ -57,11 +74,21 @@ class numPrimos:
         return not any(num_test % i == 0 for i in range(3, sqrt_n, 2))
     
 
-    def convertir_a_binario(self, numero):
+    def convertir_a_binario(self, numero: int) -> str:
+        """Método que convierte un número decimal a binario
+
+        Args:
+            numero (int): Número decimal
+
+        Returns:
+            str: Número binario
+        """
         return bin(numero)[2:]
     
 
     def calcular_rango_primos(self):
+        """Método que escribe en archivos los números primos decimales y binarios
+        """
         for i in range(2, self.fin_rango+1):
             bandera_primo = self.es_primo(i)
             if bandera_primo:
@@ -70,15 +97,14 @@ class numPrimos:
                 self.arch_binprimos.write(f"{binario}, ")
                 self.arch_decprimos.write(f"{i}, ")
                 self.arch_tablasUnos.write(f"{i}, {binario.count('1')}\n")
-            if i % 1000000 == 0:
-                print(i)
 
 
     def graficar_num_unos(self):
+        """Función que hace la gráfica del número de unos por número primo
+        """
         numeros_primos = []
         numeros_de_unos = []
 
-        # Abre el archivo CSV y lee los datos
         with open("tabla.csv", newline='') as archivo_csv:
             reader = csv.DictReader(archivo_csv)
             for fila in reader:
@@ -87,18 +113,14 @@ class numPrimos:
                     numeros_de_unos.append(int(fila[" Cantidad de Unos"]))
                 except:
                     print(f"numero = {fila['Numero']} Cantidad = {int(fila[' Cantidad de Unos'])}")
-
-        # Crea la gráfica poligonal
         plt.figure(figsize=(10, 6))
         plt.plot(numeros_primos, numeros_de_unos, marker='o', linestyle='-', color='b', markersize=3)
         plt.title('Número Primo vs Número de Unos')
         plt.xlabel('Número Primo')
         plt.ylabel('Número de Unos')
         plt.grid(True)
-
-        # Muestra la gráfica
         plt.show()
-        
+                
 
 #  --------------------------------------------------------------------------------------------------------------------
 # FUNCIÓN PRINCIPAL MAIN
@@ -106,16 +128,31 @@ class numPrimos:
 
 if __name__ == "__main__":
     os.system('clear')
+
+    print("\t\t\t***UNIVERSO DE NÚMEROS PRIMOS***")
+    modo = input("\t>>Deseas que el rango se elija de manera automática o manual? [a/m]: ")
+    while modo.lower() != "a" and modo.lower() != "m":
+        print("Modo inválido, ingreséselo nuevamente para continuar")
+        modo = input("\t>>Deseas que 'n' se elija de manera automática o manual? [a/m]: ")
+
+    match modo:
+        case "m":
+            n = int(input("\nIngresa el rango máximo para el cálculo de primos [4,10⁷]: "))
+            while n > 10000000 and n < 4:
+                print("Rango incorrecto! Inténtalo nuevamente.")
+                n = int(input("\nIngresa el rango máximo para el cálculo de primos [4,10⁷]: "))
+        case _:
+            n = random.randint(0, 10000000)
+            print(f"\nSe ha elegido un n={n}")
+
+    print("\t >>Calculando números primos...\n")
     inicio = time.perf_counter()
-    n = int(input("Ingresa el rango máximo: "))
-    t = numPrimos(n)
+    t = ParticionNumPrimos(n)
     t.calcular_rango_primos()
+    fin = time.perf_counter()
     t.arch_binprimos.close()
     t.arch_decprimos.close()
     t.arch_tablasUnos.close()
-    print("Empieza gráfica")
     t.graficar_num_unos()
-    print("Termina gRáfica")
-    fin = time.perf_counter()
     tiempo_transcurrido = fin - inicio
-    print(f"Tiempo de ejecución: {tiempo_transcurrido:.5f} segundos")
+    print(f"Se han calculado los números primos en un tiempo de: {tiempo_transcurrido:.2f} segundos")

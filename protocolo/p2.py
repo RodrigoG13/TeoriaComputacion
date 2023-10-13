@@ -54,10 +54,7 @@ def generar_palabras(num_palabras: int, long_cadena:int) -> list:
         list: Lista de palabras binarias
     """
 
-    palabras = []
-    for j in range(0, num_palabras):
-        string = "".join([str(random.randint(0,1)) for i in range(0, long_cadena)])
-        palabras.append(string)
+    palabras = [''.join([str(random.randint(0, 1)) for _ in range(long_cadena)]) for _ in range(num_palabras)]
     return palabras
 
 
@@ -102,8 +99,9 @@ if __name__ == "__main__":
     nombre_aceptadas = "aceptadas.txt"
     nombre_rechazadas = "rechazadas.txt"
 
-    long_cadena = 4
-    num_palabras = 5
+    long_cadena = 64
+    num_palabras = 1000000
+
     num_act = 0
     os.system('clear')
     print("\t\t\t***PROTOCOLO***\n")

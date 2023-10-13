@@ -1,13 +1,30 @@
-# Abre el archivo en modo lectura
-with open('particionUniverso.txt', 'r') as archivo:
-    # Obtiene el tamaño del archivo
-    archivo.seek(0, 2)  # Coloca el cursor al final del archivo
-    tamaño = archivo.tell()
-    
-    # Retrocede 30 caracteres desde el final (o menos si el archivo tiene menos de 30 caracteres)
-    archivo.seek(max(tamaño - 30, 0))
-    
-    # Lee los últimos 30 caracteres
-    últimos_30_caracteres = archivo.read()
+import threading
 
-print(últimos_30_caracteres)
+# Define una función que será ejecutada en cada hilo
+def mi_funcion(id):
+    # Realiza algún trabajo en el hilo y retorna un valor
+    resultado = f'Resultado del hilo {id}'
+    return resultado
+
+# Crea una lista para almacenar los hilos
+hilos = []
+
+# Crea un diccionario para almacenar los resultados de cada hilo
+resultados = {}
+
+# Número de hilos que deseas crear
+num_hilos = 5
+
+# Inicia los hilos y almacena sus objetos en la lista 'hilos'
+for i in range(num_hilos):
+    hilo = threading.Thread(target=lambda i=i: resultados.update({i: mi_funcion(i)}))
+    hilos.append(hilo)
+    hilo.start()
+
+# Espera a que todos los hilos terminen
+for hilo in hilos:
+    hilo.join()
+
+# Ahora, puedes acceder a los resultados de cada hilo usando el diccionario 'resultados'
+for i, resultado in resultados.items():
+    print(f'Hilo {i}: {resultado}')

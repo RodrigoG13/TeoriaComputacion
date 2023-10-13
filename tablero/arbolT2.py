@@ -137,19 +137,19 @@ class ArbolN_ario:
 
 if __name__ == "__main__":
 
-    """tablero = (
+    tablero = (
         (("b", False, 1), ("r", False, 2), ("b", False, 3), ("r", False, 4)),
         (("r", False, 5), ("b", False, 6), ("r", False, 7), ("b", False, 8)),
         (("b", False, 9), ("r", False, 10), ("b", False, 11), ("r", False, 12)),
         (("r", False, 13), ("b", False, 14), ("r", False, 15), ("b", False, 16))
-    )"""
+    )
 
-    """indices = {1: (0,0), 2: (0,1), 3: (0,2), 4: (0,3),
+    indices = {1: (0,0), 2: (0,1), 3: (0,2), 4: (0,3),
                5: (1,0), 6: (1,1), 7: (1,2), 8: (1,3),
                9: (2,0), 10: (2,1), 11: (2,2), 12: (2,3),
-               13: (3,0), 14: (3,1), 15: (3,2), 16: (3,3)}"""
+               13: (3,0), 14: (3,1), 15: (3,2), 16: (3,3)}
     
-    tablero = [
+    """tablero = [
         [["b", False, 1], ["r", False, 2], ["b", False, 3]],
         [["r", False, 4], ["b", False, 5], ["r", False, 6]],
         [["b", False, 7], ["r", False, 8], ["b", False, 9]]
@@ -158,9 +158,10 @@ if __name__ == "__main__":
     indices = {1:(0,0), 2:(0,1), 3:(0,2),
                4:(1,0), 5:(1,1), 6:(1,2),
                7:(2,0), 8:(2,1), 9:(2,2)
-    }
+    }"""
 
-    ruta = ["r", "b", "b"]
+    #ruta = ["r", "b", "b"]
+    ruta = ['r', 'r', 'r', 'b', 'b', 'r', 'b', 'b', 'b', 'r']
 
     t = ArbolN_ario(1, 0)
     with open("todas.txt", "w") as todas, open("ganadoras.txt", "w") as ganadoras:
