@@ -1,5 +1,5 @@
 import multiprocessing
-from arbolT2 import *
+from arbol_rutas import *
 import random
 import time
 
@@ -19,14 +19,18 @@ def generar_rutas(tablero: tuple, indices: dict, estado_inicial:int, estado_fina
     archivo_todas = open(f"{nombre_arch}_todas.txt", "a+")
     archivo_ganadoras = open(f"{nombre_arch}_ganadorasT2.txt", "a+")
     t = ArbolN_ario(estado_inicial, 0)
-    estados, ganadoras = t.generar_arbol(colores_ruta, tablero, indices, t, [], estado_final, archivo_todas, archivo_ganadoras)
+    estados, ganadoras = t.generar_arboles(colores_ruta, tablero, indices, t, [], estado_final, archivo_todas, archivo_ganadoras)
     archivo_todas.write("\n".join(estados))
     archivo_todas.write("\n")
     archivo_ganadoras.write("\n".join(ganadoras))
     archivo_ganadoras.write("\n")
 
-    print("Ya construi el arbol")
-    #t.recorrido_profundidad([], str(estado_final), t, id_ficha, archivo_todas, archivo_ganadoras)
+    t = ArbolN_ario(estado_inicial, 0)
+    with open(f"{nombre_arch}_todas.txt", "w") as todas, open(f"{nombre_arch}_ganadorasT2.txt", "w") as ganadoras:
+        hito = threading.Thread(target=generar_arboles, args=(ruta, tablero, indices, t, [], "9", todas, ganadoras))
+        hito.start()
+        hito.join()
+
 
 
 if __name__ == "__main__":

@@ -26,6 +26,7 @@ def seleccionar_hijos(tablero, indices, movimientos, lista):
                 hijos.append(casilla[2])
     return hijos
 
+
 def generar_arbol(arch, movimientos, tablero, indices, lista):
     if len(lista) <= len(movimientos):
         hijos = seleccionar_hijos(tablero, indices, movimientos, lista)

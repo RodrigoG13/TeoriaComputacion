@@ -178,10 +178,10 @@ if __name__ == "__main__":
 
     file_lock = threading.Lock()
 
-    ruta = ["r", "b", "r", "b", "r", "b", "r", "b", "r", "b", "r", "b", "r", "b", "r", "b", "r", "b", "r", "b"]
+    ruta = ["r", "b", "r", "b", "r", "b", "r", "b", "r", "b", "r", "b", "r", "b", "r"]
 
     t = ArbolN_ario(1, 0)
-    with open("todas.txt", "w") as todas, open("ganadoras.txt", "w") as ganadoras:
+    with open("puerco.txt", "w") as todas, open("puercote.txt", "w") as ganadoras:
         hito = threading.Thread(target=generar_arboles, args=(ruta, tablero, indices, t, [], "9", todas, ganadoras))
         hito.start()
         hito.join()

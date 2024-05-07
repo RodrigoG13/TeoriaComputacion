@@ -1,0 +1,3 @@
+La cadena es: 0001111
+(q, 0001111, Zo)->(q, 001111, XZo)->(q, 01111, XXZo)->(q, 1111, XXXZo)->(p, 111, XXZo)->(p, 11, XZo)->(p, 1, Zo)
+Esta cadena no es valida

@@ -1,0 +1,15 @@
+if (condition) {
+    if (condition) {
+        if (condition) {
+            //instrucciones//;
+        }
+    } else {
+        if (condition) {
+            //instrucciones//;
+        }
+    } else {
+        if (condition) {
+            //instrucciones//;
+        }
+    }
+}

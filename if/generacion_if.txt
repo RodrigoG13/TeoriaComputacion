@@ -1,0 +1,11 @@
+La cantidad de if's será de 5
+
+iCtSA // inicio
+iCtSA // A -> ;eS: iCtS;eS
+iCtS;eS // 2S -> iCtSA: iCtS;eiCtSA
+iCtS;eiCtSA // A -> ;eS: iCtS;eiCtS;eS
+iCtS;eiCtS;eS // 1S -> iCtSA: iCtiCtSA;eiCtS;eS
+iCtiCtSA;eiCtS;eS // A -> ε: iCtiCtS;eiCtS;eS
+iCtiCtS;eiCtS;eS // 3S -> iCtSA: iCtiCtS;eiCtS;eiCtSA
+iCtiCtS;eiCtS;eiCtSA // A -> ε: iCtiCtS;eiCtS;eiCtS
+iCtiCtS;eiCtS;eiCtS // 1S -> iCtSA: iCtiCtiCtSA;eiCtS;eiCtS

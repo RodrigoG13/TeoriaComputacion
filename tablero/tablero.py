@@ -19,10 +19,10 @@ ventana = pygame.display.set_mode(VENTANA_TAMANO)
 pygame.display.set_caption("Simulación de Ajedrez")
 
 # Matriz para representar el tablero (4x4)
-tablero = [[0, 0, 0, 0],
+"""tablero = [[0, 0, 0, 0],
            [0, 0, 0, 0],
            [0, 0, 0, 0],
-           [0, 0, 0, 0]]
+           [0, 0, 0, 0]]"""
 
 # Posiciones iniciales de las piezas
 pieza1_pos = (0, 0)
